@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { ListProductsQuery } from 'app/API.service';
 import { ProductModel } from '../models/product.model';
 
 export const loadProductsAction = createAction(
@@ -6,7 +7,7 @@ export const loadProductsAction = createAction(
 );
 export const loadProductsSuccessAction = createAction(
     '[Products] load successful',
-    props<{ products: ProductModel[] }>()
+    props<{ products: ListProductsQuery }>()
 );
 export const loadProductAction = createAction(
     '[Products] load product',

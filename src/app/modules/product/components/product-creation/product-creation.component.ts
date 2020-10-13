@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
+import { APIService, CreateProductInput, CreateProductMutation } from 'app/API.service';
 
 @Component({
     selector: 'product-creation',
@@ -14,6 +15,7 @@ export class ProductCreationComponent implements OnInit {
 
     constructor(
         public matDialogRef: MatDialogRef<ProductCreationComponent>,
+        private apiService: APIService,
         private formBuilder: FormBuilder
     ) { }
 
@@ -24,6 +26,20 @@ export class ProductCreationComponent implements OnInit {
     }
 
     public saveAndClose(): void {
-        this.matDialogRef.close();
+        const input: CreateProductInput = {
+            name: 'sandbox',
+        };
+        this.apiService.CreateProduct(input)
+            .then((value: CreateProductMutation) => {
+                console.log('CreateProduct then', value);
+            })
+            .catch((reason: any) => {
+                console.log('CreateProduct catch', reason);
+            })
+            .finally(() => {
+                console.log('CreateProduct finally');
+                this.matDialogRef.close();
+            });
+
     }
 }

@@ -1,0 +1,331 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateProduct {
+  onCreateProduct {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProduct {
+  onUpdateProduct {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProduct {
+  onDeleteProduct {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateService {
+  onCreateService {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateService {
+  onUpdateService {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteService {
+  onDeleteService {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSolution {
+  onCreateSolution {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSolution {
+  onUpdateSolution {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSolution {
+  onDeleteSolution {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFeature {
+  onCreateFeature {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateFeature {
+  onUpdateFeature {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteFeature {
+  onDeleteFeature {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}

@@ -1,0 +1,367 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateProduct(
+  $input: CreateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  createProduct(input: $input, condition: $condition) {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProduct(
+  $input: UpdateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  updateProduct(input: $input, condition: $condition) {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProduct(
+  $input: DeleteProductInput!
+  $condition: ModelProductConditionInput
+) {
+  deleteProduct(input: $input, condition: $condition) {
+    id
+    name
+    services {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    solutions {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    features {
+      items {
+        id
+        title
+        productID
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateService(
+  $input: CreateServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  createService(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateService(
+  $input: UpdateServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  updateService(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteService(
+  $input: DeleteServiceInput!
+  $condition: ModelServiceConditionInput
+) {
+  deleteService(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSolution(
+  $input: CreateSolutionInput!
+  $condition: ModelSolutionConditionInput
+) {
+  createSolution(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSolution(
+  $input: UpdateSolutionInput!
+  $condition: ModelSolutionConditionInput
+) {
+  updateSolution(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSolution(
+  $input: DeleteSolutionInput!
+  $condition: ModelSolutionConditionInput
+) {
+  deleteSolution(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFeature(
+  $input: CreateFeatureInput!
+  $condition: ModelFeatureConditionInput
+) {
+  createFeature(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateFeature(
+  $input: UpdateFeatureInput!
+  $condition: ModelFeatureConditionInput
+) {
+  updateFeature(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteFeature(
+  $input: DeleteFeatureInput!
+  $condition: ModelFeatureConditionInput
+) {
+  deleteFeature(input: $input, condition: $condition) {
+    id
+    title
+    productID
+    product {
+      id
+      name
+      services {
+        nextToken
+      }
+      solutions {
+        nextToken
+      }
+      features {
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+    createdAt
+    updatedAt
+  }
+}

@@ -1,0 +1,28 @@
+type Product @model {
+  id: ID!
+  name: String!
+  services: [Service] @connection(keyName: "byProduct", fields: ["id"])
+  solutions: [Solution] @connection(keyName: "byProduct", fields: ["id"])
+  features: [Feature] @connection(keyName: "byProduct", fields: ["id"])
+}
+
+type Service @model @key(name: "byProduct", fields: ["productID"]) {
+  id: ID!
+  title: String!
+  productID: ID!
+  product: Product @connection(fields: ["productID"])
+}
+
+type Solution @model @key(name: "byProduct", fields: ["productID"]) {
+  id: ID!
+  title: String!
+  productID: ID!
+  product: Product @connection(fields: ["productID"])
+}
+
+type Feature @model @key(name: "byProduct", fields: ["productID"]) {
+  id: ID!
+  title: String!
+  productID: ID!
+  product: Product @connection(fields: ["productID"])
+}

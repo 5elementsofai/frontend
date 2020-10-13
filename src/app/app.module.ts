@@ -21,6 +21,8 @@ import { mockDataServices } from 'app/data/mock';
 import { LayoutModule } from 'app/layout/layout.module';
 import { environment } from 'environments/environment';
 import { MarkdownModule } from 'ngx-markdown';
+import { ProductEffects } from './modules/product/state/product.effects';
+import { productReducer } from './modules/product/state/product.reducer';
 
 const routerConfig: ExtraOptions = {
     scrollPositionRestoration: 'enabled',
@@ -53,12 +55,13 @@ const routerConfig: ExtraOptions = {
 
         // ngrx
         StoreModule.forRoot({}),
+        StoreModule.forFeature('products', productReducer),
         StoreDevtoolsModule.instrument({
             name: 'AI Platform',
             maxAge: 25,
             logOnly: environment.production
         }),
-        EffectsModule.forRoot([]),
+        EffectsModule.forRoot([ProductEffects]),
 
         // amplify
         AmplifyUIAngularModule,

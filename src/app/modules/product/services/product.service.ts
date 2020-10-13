@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { APIService, ListProductsQuery, ModelProductFilterInput } from 'app/API.service';
+import { from, Observable, of } from 'rxjs';
 import { CategoryModel } from '../models/category.model';
 import { ProductModel } from '../models/product.model';
 
@@ -75,8 +76,13 @@ export class ProductService {
     solutions: [],
   }];
 
-  public getProducts(): Observable<ProductModel[]> {
-    return of(this.products);
+  constructor(private apiService: APIService) {
+    
+  }
+
+  public getProducts(): Observable<ListProductsQuery> {
+    const products = this.apiService.ListProducts();
+    return from(products);
   }
 
   public getProduct(productId: number): Observable<ProductModel> {

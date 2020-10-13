@@ -45,8 +45,8 @@ import { productReducer } from './state/product.reducer';
         FormsModule,
 
         RouterModule.forChild(routes),
-        StoreModule.forFeature('products', productReducer),
-        EffectsModule.forFeature([ProductEffects]),
+        // StoreModule.forFeature('products', productReducer),
+        // EffectsModule.forFeature([ProductEffects]),
 
         // Treo
         TreoCardModule,

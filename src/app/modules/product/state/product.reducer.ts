@@ -1,4 +1,6 @@
+import { nullSafeIsEquivalent } from '@angular/compiler/src/output/output_ast';
 import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
+import { ListProductsQuery } from 'app/API.service';
 import { AppState } from '../../../states/app.state';
 import { ProductModel } from '../models/product.model';
 import { errorAction, loadProductsSuccessAction, loadProductSuccessAction } from './product.actions';
@@ -8,7 +10,7 @@ export interface State extends AppState {
 }
 
 export interface ProductState {
-    products: ProductModel[];
+    products: ListProductsQuery;
     currentProduct?: ProductModel;
     currentProductId?: number;
     errors: string[];
@@ -16,7 +18,7 @@ export interface ProductState {
 }
 
 const initialState: ProductState = {
-    products: [],
+    products: null,
     errors: [],
     hasErrors: false,
 };
