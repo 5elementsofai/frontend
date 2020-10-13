@@ -1,5 +1,5 @@
 <div class="content-layout" [ngClass]="'left-sidebar-fullheight-standard-' + scrollMode + '-scroll'"
-    *ngIf="product$ | async as product">
+    *ngIf="product">
     <mat-drawer-container>
         <mat-drawer [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened" #matDrawer>
             <treo-vertical-navigation [navigation]="menu" inner="true" mode="side" name="navigation" opened="true">
@@ -8,6 +8,9 @@
 
         <mat-drawer-content>
             <div class="header">
+                <div class="left">
+                    <mat-icon svgIcon="oneandone"></mat-icon> 
+                </div>
                 <div class="left">
                     <div class="breadcrumb">
                         <span class="path">{{ product.category.title }}</span>
@@ -59,7 +62,7 @@
                 </div>
             </div>
             <div class="main">
-                MAIN
+                <router-outlet></router-outlet>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

@@ -5,61 +5,8 @@
       "type": "cicd"
     }
   },
-  "storage": {
-    "Products": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "function": {
-    "Products": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": [
-        {
-          "category": "storage",
-          "resourceName": "Products",
-          "attributes": [
-            "Name",
-            "Arn"
-          ],
-          "attributeEnvMap": {
-            "Name": "TABLE_NAME",
-            "Arn": "TABLE_ARN"
-          }
-        },
-        {
-          "category": "storage",
-          "resourceName": "Products",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  },
-  "auth": {
-    "cognitob9324b9a": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "api": {
-    "Products": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "Products",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    }
-  }
+  "storage": {},
+  "function": {},
+  "auth": {},
+  "api": {}
 }
