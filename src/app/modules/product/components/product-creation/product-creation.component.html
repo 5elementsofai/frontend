@@ -1,10 +1,22 @@
 <div class="header">
-    <div class="title">New product</div>
-    <button mat-button (click)="saveAndClose()">
-        HALLO
+    <div class="title">New Product</div>
+    <button class="close-button" mat-icon-button (click)="saveAndClose()" [tabIndex]="-1">
+        <mat-icon [svgIcon]="'close'"></mat-icon>
     </button>
 </div>
 
-<form>
+<form [formGroup]="productForm" (ngSubmit)="saveAndClose()">
+    <mat-form-field style="width: 336px;">
+        <mat-label>Product name</mat-label>
+        <input matInput formControlName="name" required maxlength="250" type="text">
+    </mat-form-field>
 
+    <div class="actions">
+        <div class="buttons">
+            <button class="save-button" mat-button type="submit">
+                <mat-icon [svgIcon]="'save'"></mat-icon>
+                <span>Create product</span>
+            </button>
+        </div>
+    </div>
 </form>

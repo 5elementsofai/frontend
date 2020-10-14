@@ -1,0 +1,119 @@
+@import 'treo';
+
+product-creation {
+	display: flex;
+	flex-direction: column;
+	min-width: 640px;
+	max-width: 960px;
+	width: 100%;
+	max-height: 80vh;
+
+	@include treo-breakpoint('lt-md') {
+		min-width: 0;
+	}
+
+	.header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 20px 0 32px;
+		height: 64px;
+		min-height: 64px;
+		max-height: 64px;
+
+		.title {
+			font-size: 16px;
+		}
+
+		.close-button {
+			.mat-icon {
+				@include treo-icon-size(20);
+			}
+		}
+	}
+
+	form {
+		.actions {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 32px;
+
+			@include treo-breakpoint('lt-md') {
+				flex-direction: column;
+				align-items: flex-end;
+				margin-top: 16px;
+			}
+
+			.formatting {
+				margin-left: -12px;
+
+				@include treo-breakpoint('lt-md') {
+					margin: 0 -12px 12px 0;
+				}
+
+				button {
+					.mat-icon {
+						@include treo-icon-size(20);
+					}
+				}
+			}
+
+			.buttons {
+				display: flex;
+				align-items: center;
+
+				button {
+					&.discard-button {
+						margin-right: 8px;
+
+						@include treo-breakpoint('xs') {
+							span {
+								display: none;
+							}
+						}
+					}
+
+					&.save-button {
+						margin-right: 16px;
+
+						@include treo-breakpoint('xs') {
+							span {
+								display: none;
+							}
+						}
+					}
+
+					&.send-button {
+						min-width: 96px;
+						margin-right: 0;
+					}
+
+					.mat-icon {
+						@include treo-icon-size(20);
+						margin-right: 8px;
+
+						@include treo-breakpoint('xs') {
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include treo-theme {
+    $primary: map-get($theme, primary);
+
+    product-creation {
+        .header {
+            background: map-get($primary, default);
+            color: map-get($primary, default-contrast);
+
+            .mat-icon {
+                color: map-get($primary, default-contrast);
+            }
+        }
+    }
+}

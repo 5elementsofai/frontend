@@ -13,8 +13,6 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { RouterModule } from '@angular/router';
-import { EffectsModule } from '@ngrx/effects';
-import { StoreModule } from '@ngrx/store';
 import { TreoCardModule } from '@treo/components/card';
 import { TreoNavigationModule } from '@treo/components/navigation';
 import { ProductCreationComponent } from './components/product-creation/product-creation.component';
@@ -26,8 +24,6 @@ import { ProductServicesComponent } from './components/product-services/product-
 import { ProductSettingsComponent } from './components/product-settings/product-settings.component';
 import { ProductViewsComponent } from './components/product-views/product-views.component';
 import { routes } from './product-routing.module';
-import { ProductEffects } from './state/product.effects';
-import { productReducer } from './state/product.reducer';
 
 @NgModule({
     declarations: [

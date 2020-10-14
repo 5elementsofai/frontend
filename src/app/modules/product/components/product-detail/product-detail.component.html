@@ -1,5 +1,4 @@
-<div class="content-layout" [ngClass]="'left-sidebar-fullheight-standard-' + scrollMode + '-scroll'"
-    *ngIf="product">
+<div class="content-layout" [ngClass]="'left-sidebar-fullheight-standard-' + scrollMode + '-scroll'" *ngIf="product">
     <mat-drawer-container>
         <mat-drawer [autoFocus]="false" [mode]="drawerMode" [opened]="drawerOpened" #matDrawer>
             <treo-vertical-navigation [navigation]="menu" inner="true" mode="side" name="navigation" opened="true">
@@ -9,11 +8,11 @@
         <mat-drawer-content>
             <div class="header">
                 <div class="left">
-                    <mat-icon svgIcon="oneandone"></mat-icon> 
+                    <mat-icon svgIcon="oneandone"></mat-icon>
                 </div>
                 <div class="left">
                     <div class="breadcrumb">
-                        <span class="path">{{ product.category.title }}</span>
+                        <span class="path">{{ product.name }}</span>
                         <!--
                         <span class="separator">/</span>
                         <span class="path">LEFT SIDEBAR</span>
@@ -21,13 +20,28 @@
                         <span class="path">FULLHEIGHT</span>
                         -->
                     </div>
-                    <h1>{{ product.title }}</h1>
+                    <h1>
+                        <!--
+                        <form [formGroup]="productNameForm">
+                            <mat-form-field>
+                                <input mat-input formControlName="name">
+                                <button mat-icon-button matSuffix (click)="updateProductName()">
+                                    <mat-icon>disk</mat-icon>
+                                </button>
+                            </mat-form-field>
+                        </form>
+                        -->
+                        {{ product.name }}
+                    </h1>
                 </div>
 
                 <div class="right">
+                    <button class="mr-4" mat-sroked-button>
+                        <mat-icon class="icon-size-18" svgIcon="play_arrow"></mat-icon>
+                    </button>
                     <!-- Drawer toggle -->
                     <button class="mr-4" mat-stroked-button (click)="matDrawer.toggle()">
-                        <mat-icon class="icon-size-18" [svgIcon]="'menu'"></mat-icon>
+                        <mat-icon class="icon-size-18" [svgIcon]="'play_arrow'"></mat-icon>
                         <span class="ml-2 md:hidden xs:hidden">Menu</span>
                     </button>
 
@@ -62,7 +76,10 @@
                 </div>
             </div>
             <div class="main">
-                <router-outlet></router-outlet>
+                <router-outlet>
+                    <button mat-button (click)="updateProduct()">Update product</button>
+                    <button mat-button (click)="createApplication()">Create application</button>
+                </router-outlet>
             </div>
         </mat-drawer-content>
     </mat-drawer-container>

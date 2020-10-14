@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TreoNavigationItem } from '@treo/components/navigation';
-import { Observable } from 'rxjs';
-import { ProductModel } from '../../models/product.model';
-import { loadProductAction } from '../../state/product.actions';
+import { GetProductQuery } from 'app/API.service';
+import { loadProductAction, updateProductAction } from '../../state/product.actions';
 import { getProduct, State } from '../../state/product.reducer';
 
 @Component({
@@ -15,12 +15,16 @@ import { getProduct, State } from '../../state/product.reducer';
     styleUrls: ['./product-detail.component.scss'],
 })
 export class ProductDetailComponent implements OnInit {
-    public product$: Observable<ProductModel>;
-    public product: ProductModel;
+    public productId: string;
+    public product: GetProductQuery;
 
     public drawerMode = 'side';
     public drawerOpened = true;
     public scrollMode = 'inner';
+
+    public productNameForm: FormGroup = new FormGroup({
+        name: new FormControl(),
+    });
 
     public menu: TreoNavigationItem[] = [
         {
@@ -104,9 +108,29 @@ export class ProductDetailComponent implements OnInit {
             type: 'divider'
         },
         {
-            title: 'Playground',
-            type: 'basic',
-            icon: 'play_arrow',
+            title: 'Solutions',
+            subtitle: 'Solutions, Features and Services',
+            type: 'group',
+            children: [
+                {
+                    title: 'Solutions',
+                    type: 'basic',
+                    icon: 'settings',
+                    link: './services',
+                },
+                {
+                    title: 'Services',
+                    type: 'basic',
+                    icon: 'settings',
+                    link: './services',
+                },
+                {
+                    title: 'Features',
+                    type: 'basic',
+                    icon: 'settings',
+                    link: './services',
+                },
+            ]
         },
         {
             type: 'divider'
@@ -123,37 +147,28 @@ export class ProductDetailComponent implements OnInit {
     }
 
     public ngOnInit(): void {
-        this.store.select(getProduct).subscribe((product: ProductModel) => {
-            console.log('product', product);
+        this.store.select(getProduct).subscribe((product: GetProductQuery) => {
+            console.log('productQuery', product);
             if (product) {
                 this.product = product;
-
-                if (product.services.length > 0) {
-                    this.menu.push({
-                        title: 'Services',
-                        type: 'group',
-                        children: product.services.map(service => ({ ...service, type: 'basic' })),
-                    });
-                }
-                if (product.solutions.length > 0) {
-                    this.menu.push({
-                        title: 'Solutions',
-                        type: 'group',
-                        children: product.solutions.map(solution => ({ ...solution, type: 'basic' })),
-                    });
-                }
-                if (product.features.length > 0) {
-                    this.menu.push({
-                        title: 'Features',
-                        type: 'group',
-                        children: product.features.map(feature => ({ ...feature, type: 'basic' })),
-                    });
-                }
             }
         });
 
         this.route.params.subscribe(params => {
+            this.productId = params.id;
             this.store.dispatch(loadProductAction({ productId: params.id }));
         });
+    }
+
+    public updateProduct(): void {
+        this.store.dispatch(updateProductAction({ productId: this.productId, product: {} }));
+    }
+
+    public updateProductName(): void {
+        this.store.dispatch(updateProductAction({ productId: this.productId, product: {} }));
+    }
+
+    public createApplication(): void {
+
     }
 }

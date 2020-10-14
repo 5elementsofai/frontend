@@ -17,6 +17,28 @@
           "appId": "d21hoejonmj044",
           "type": "cicd"
         }
+      },
+      "function": {
+        "amplify": {
+          "deploymentBucketName": "amplify-aiplatform-dev-195527-deployment",
+          "s3Key": "amplify-builds/amplify-build.zip"
+        }
+      }
+    },
+    "nonCFNdata": {
+      "function": {
+        "amplify": {
+          "layerVersionMap": {
+            "1": {
+              "permissions": [
+                {
+                  "type": "private"
+                }
+              ],
+              "hash": "poBpOtRF9D8a1+mMZiXTG9yxrYtlndwuMEl5VhIzZMQ="
+            }
+          }
+        }
       }
     }
   }

@@ -6,7 +6,19 @@
     }
   },
   "storage": {},
-  "function": {},
+  "function": {
+    "amplify": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    },
+    "helloWorld": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    }
+  },
   "auth": {},
   "api": {
     "ProductAPI": {
