@@ -6,6 +6,9 @@ import { ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { TreoNavigationItem } from '@treo/components/navigation';
 import { GetProductQuery } from 'app/API.service';
+import { Auth } from 'aws-amplify';
+import AWS, { AWSError } from 'aws-sdk';
+import { ListFunctionsResponse } from 'aws-sdk/clients/lambda';
 import { loadProductAction, updateProductAction } from '../../state/product.actions';
 import { getProduct, State } from '../../state/product.reducer';
 
@@ -168,7 +171,22 @@ export class ProductDetailComponent implements OnInit {
         this.store.dispatch(updateProductAction({ productId: this.productId, product: {} }));
     }
 
-    public createApplication(): void {
-
+    public invokeLambda(): void {
+        Auth.currentCredentials()
+            .then(credentials => {
+                const lambda = new AWS.Lambda({
+                    credentials: Auth.essentialCredentials(credentials)
+                });
+                lambda.listFunctions((err: AWSError, data: ListFunctionsResponse) => {
+                    console.log(err, data);
+                });
+                /*
+                return lambda.invoke({
+                    FunctionName: 'my-function',
+                    Payload: JSON.stringify({ hello: 'world' }),
+                });
+                */
+            })
+            .catch(console.error);
     }
 }
