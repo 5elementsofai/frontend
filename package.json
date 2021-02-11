@@ -44,7 +44,7 @@
     "@ngrx/effects": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@ngrx/store-devtools": "^10.0.0",
-    "apexcharts": "3.19.3",
+    "apexcharts": "3.24.0",
     "crypto-js": "3.3.0",
     "highlight.js": "10.1.1",
     "lodash-es": "4.17.15",
